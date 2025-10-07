@@ -11,7 +11,7 @@ export function Footer() {
                 <span className="text-primary font-bold text-xl">A</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">AFRILAURA</h3>
+                <h3 className="text-xl font-bold">AFRILAURE</h3>
                 <p className="text-sm text-white/80">Instituto Politécnico</p>
               </div>
             </div>
@@ -83,7 +83,7 @@ export function Footer() {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-white/80">
-              © 2025 Instituto Politécnico Privado AFRILAURA. Todos os direitos reservados.
+              © 2025 Instituto Politécnico Privado AFRILAURE. Todos os direitos reservados.
             </p>
             <div className="flex gap-4">
               <a

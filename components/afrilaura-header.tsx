@@ -24,7 +24,7 @@ export function Header() {
               <span className="text-white font-bold text-xl">A</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-primary">AFRILAURA</h1>
+              <h1 className="text-xl font-bold text-primary">Afrilaure</h1>
               <p className="text-xs text-muted-foreground">Instituto Politécnico Privado</p>
             </div>
           </div>

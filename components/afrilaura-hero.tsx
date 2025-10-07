@@ -17,7 +17,7 @@ export function Hero() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-              Instituto Politécnico Privado AFRILAURA
+              Instituto Politécnico Privado AFRILAURE
             </h1>
             <p className="text-xl text-foreground mb-8 leading-relaxed">
               Excelência em educação técnica e académica em Angola. Formamos profissionais qualificados para o futuro.
@@ -60,7 +60,7 @@ export function Hero() {
           <div className="relative">
             <img
               src="/african-students-studying-in-modern-classroom-in-a.jpg"
-              alt="Estudantes AFRILAURA"
+              alt="Estudantes AFRILAURE"
               className="rounded-2xl shadow-2xl w-full"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">

@@ -1,13 +1,15 @@
-import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type React from "react"
+import type { Metadata } from "next"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
+import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react"
+import "./globals.css"
 
 export const metadata: Metadata = {
-  title: 'Afrilaure',
-  description: 'Created with Afrilaure',
-  generator: 'Afrilaure',
+  title: "Afrilaure - Escola Técnica de Excelência",
+  description: "Escola Técnica Afrilaure - Formação em Informática e Electrónica em Viana, Angola",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -16,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        {children}
+        <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
     </html>

@@ -2,173 +2,153 @@
 
 import type React from "react"
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Send } from "lucide-react"
+import { MapPin, Phone, Mail, Building2 } from "lucide-react"
+import { useState } from "react"
 
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    language: "",
     message: "",
   })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aqui você pode adicionar a lógica de envio do formulário
-    alert("Obrigado pelo seu interesse! Entraremos em contacto em breve.")
-    setFormData({ name: "", email: "", phone: "", language: "", message: "" })
+    console.log("Form submitted:", formData)
+    alert("Mensagem enviada com sucesso! Entraremos em contacto em breve.")
+    setFormData({ name: "", email: "", phone: "", message: "" })
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Localização",
+      content: "Rua 17 de Setembro nº 35, Zona 10",
+      content2: "Depois da Comarca de Viana",
+      content3: "Por detrás às bombas de combustíveis dos Montes Claros",
+    },
+    {
+      icon: Phone,
+      title: "Contactos Telefónicos",
+      items: [
+        { label: "Facturação", number: "944 413 764" },
+        { label: "Secretaria Pedagógica", number: "923 335 126" },
+        { label: "Direcção Pedagógica", number: "923 536 224" },
+        { label: "Coordenador Curso de Saúde", number: "926 110 910 / 992 110 910" },
+      ],
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      content: "colegioafrilaure@gmail.com",
+    },
+    {
+      icon: Building2,
+      title: "Contas Bancárias",
+      items: [
+        { label: "BNI", number: "1053546" },
+        { label: "IBAN", number: "AO06 0052 0000 0105 3546 1015 9" },
+        { label: "Banco Económico", number: "00008226183" },
+        { label: "IBAN", number: "AO06 0045 0078 0000 8226 1832 8" },
+      ],
+    },
+  ]
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-card">
+    <section id="contacto" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-card-foreground mb-4">Entre em Contacto</h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            Pronto para começar a tua jornada linguística? Fala connosco!
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Entre em Contacto</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+            Tem dúvidas? Quer inscrever-se? Entre em contacto connosco!
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <Card className="bg-background">
-            <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Informações de Contacto</CardTitle>
-              <CardDescription>Estamos aqui para ajudar-te</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Telefone</h3>
-                  <a href="tel:+244948524979" className="text-muted-foreground hover:text-primary transition-colors">
-                    +244 948 524 979
-                  </a>
-                </div>
-              </div>
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Envie-nos uma Mensagem</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <Input
+                      placeholder="Nome Completo"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="email"
+                      placeholder="Email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="tel"
+                      placeholder="Telefone"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Textarea
+                      placeholder="Mensagem"
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full">
+                    Enviar Mensagem
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                  <a
-                    href="mailto:info@ilctbrenna.ao"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    info@ilctbrenna.ao
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Localização</h3>
-                  <p className="text-muted-foreground">
-                    Luanda, Angola
-                    <br />
-                    Centro de Idiomas ILC TBRENNA
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-6">
-                <img
-                  src="/modern-language-school-building-in-luanda-angola.jpg"
-                  alt="ILC TBRENNA Centro"
-                  className="rounded-lg w-full h-48 object-cover shadow-md"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-background">
-            <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Envia-nos uma Mensagem</CardTitle>
-              <CardDescription>Preenche o formulário e responderemos em breve</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Input
-                    name="name"
-                    placeholder="Nome Completo"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="bg-background"
-                  />
-                </div>
-                <div>
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="bg-background"
-                  />
-                </div>
-                <div>
-                  <Input
-                    name="phone"
-                    type="tel"
-                    placeholder="Telefone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="bg-background"
-                  />
-                </div>
-                <div>
-                  <select
-                    name="language"
-                    value={formData.language}
-                    onChange={handleChange}
-                    required
-                    className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground"
-                  >
-                    <option value="">Seleciona o Idioma</option>
-                    <option value="ingles">Inglês</option>
-                    <option value="frances">Francês</option>
-                    <option value="espanhol">Espanhol</option>
-                    <option value="vietnamita">Vietnamita</option>
-                    <option value="mandarim">Mandarim</option>
-                  </select>
-                </div>
-                <div>
-                  <Textarea
-                    name="message"
-                    placeholder="Mensagem (opcional)"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="bg-background"
-                  />
-                </div>
-                <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90" size="lg">
-                  Enviar Mensagem
-                  <Send className="ml-2 h-5 w-5" />
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          <div className="space-y-6">
+            {contactInfo.map((info, index) => (
+              <Card key={index}>
+                <CardContent className="pt-6">
+                  <div className="flex gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg h-fit">
+                      <info.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold mb-2">{info.title}</h3>
+                      {info.content && <p className="text-muted-foreground text-sm">{info.content}</p>}
+                      {info.content2 && <p className="text-muted-foreground text-sm">{info.content2}</p>}
+                      {info.content3 && <p className="text-muted-foreground text-sm">{info.content3}</p>}
+                      {info.items && (
+                        <div className="space-y-1 mt-2">
+                          {info.items.map((item, itemIndex) => (
+                            <div key={itemIndex} className="text-sm">
+                              <span className="font-medium">{item.label}:</span>{" "}
+                              <span className="text-muted-foreground">{item.number}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

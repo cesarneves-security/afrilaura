@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Menu, X, GraduationCap } from "lucide-react"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -20,46 +20,53 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <Globe className="h-8 w-8 text-primary" />
-            <div>
-              <h1 className="text-xl font-bold text-primary">ILC TBRENNA</h1>
-              <p className="text-xs text-muted-foreground">International Languages Center</p>
-            </div>
+            <GraduationCap className="h-8 w-8 text-primary" />
+            <span className="text-xl font-bold text-primary">AFRILAURE</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             <button
-              onClick={() => scrollToSection("home")}
+              onClick={() => scrollToSection("inicio")}
               className="text-foreground hover:text-primary transition-colors"
             >
               Início
             </button>
             <button
-              onClick={() => scrollToSection("languages")}
+              onClick={() => scrollToSection("sobre")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Idiomas
+              Sobre
             </button>
             <button
-              onClick={() => scrollToSection("about")}
+              onClick={() => scrollToSection("cursos")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Sobre Nós
+              Cursos
             </button>
             <button
-              onClick={() => scrollToSection("testimonials")}
+              onClick={() => scrollToSection("precos")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Testemunhos
+              Preços
             </button>
-            <Button onClick={() => scrollToSection("contact")} className="bg-secondary hover:bg-secondary/90">
+            <button
+              onClick={() => scrollToSection("transportes")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Transportes
+            </button>
+            <button
+              onClick={() => scrollToSection("contacto")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Contacto
-            </Button>
+            </button>
+            <Button onClick={() => scrollToSection("contacto")}>Inscreva-se</Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -68,31 +75,43 @@ export function Header() {
         {isMenuOpen && (
           <nav className="md:hidden py-4 flex flex-col gap-4">
             <button
-              onClick={() => scrollToSection("home")}
-              className="text-foreground hover:text-primary transition-colors text-left"
+              onClick={() => scrollToSection("inicio")}
+              className="text-left text-foreground hover:text-primary transition-colors"
             >
               Início
             </button>
             <button
-              onClick={() => scrollToSection("languages")}
-              className="text-foreground hover:text-primary transition-colors text-left"
+              onClick={() => scrollToSection("sobre")}
+              className="text-left text-foreground hover:text-primary transition-colors"
             >
-              Idiomas
+              Sobre
             </button>
             <button
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors text-left"
+              onClick={() => scrollToSection("cursos")}
+              className="text-left text-foreground hover:text-primary transition-colors"
             >
-              Sobre Nós
+              Cursos
             </button>
             <button
-              onClick={() => scrollToSection("testimonials")}
-              className="text-foreground hover:text-primary transition-colors text-left"
+              onClick={() => scrollToSection("precos")}
+              className="text-left text-foreground hover:text-primary transition-colors"
             >
-              Testemunhos
+              Preços
             </button>
-            <Button onClick={() => scrollToSection("contact")} className="bg-secondary hover:bg-secondary/90 w-full">
+            <button
+              onClick={() => scrollToSection("transportes")}
+              className="text-left text-foreground hover:text-primary transition-colors"
+            >
+              Transportes
+            </button>
+            <button
+              onClick={() => scrollToSection("contacto")}
+              className="text-left text-foreground hover:text-primary transition-colors"
+            >
               Contacto
+            </button>
+            <Button onClick={() => scrollToSection("contacto")} className="w-full">
+              Inscreva-se
             </Button>
           </nav>
         )}

@@ -1,23 +1,29 @@
-import { Header } from "@/components/afrilaura-header"
-import { Hero } from "@/components/afrilaura-hero"
-import { Courses } from "@/components/afrilaura-courses"
-import { Enrollment } from "@/components/afrilaura-enrollment"
-import { Fees } from "@/components/afrilaura-fees"
-import { Transport } from "@/components/afrilaura-transport"
-import { Activities } from "@/components/afrilaura-activities"
-import { Contact } from "@/components/afrilaura-contact"
-import { Footer } from "@/components/afrilaura-footer"
+import { Header } from "@/components/header"
+import { Hero } from "@/components/hero"
+import { About } from "@/components/about"
+import { Courses } from "@/components/courses"
+import { Documents } from "@/components/documents"
+import { Pricing } from "@/components/pricing"
+import { Transport } from "@/components/transport"
+import { Activities } from "@/components/activities"
+import { Carousel } from "@/components/carousel"
+import { Testimonials } from "@/components/testimonials"
+import { Contact } from "@/components/contact"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <About />
       <Courses />
-      <Enrollment />
-      <Fees />
+      <Documents />
+      <Pricing />
       <Transport />
       <Activities />
+      <Carousel />
+      <Testimonials />
       <Contact />
       <Footer />
     </main>

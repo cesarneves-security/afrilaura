@@ -13,26 +13,46 @@ export function Carousel() {
   const images = [
     {
       src: "/african-nursing-students-in-medical-training-class.jpg",
-      alt: "Estudantes de Enfermagem em Formação",
-      title: "Curso de Enfermagem",
+      alt: "Local de lazer escolar",
+      title: "Jardim escolar",
+    },
+    {
+      src: "/african-teacher-teaching-language-class-with-stude.jpg",
+      alt: "Local de lazer escolar",
+      title: "Jardim escolar",
     },
     {
       src: "/african-students-in-computer-class-learning-progra.jpg",
-      alt: "Aula de Informática",
-      title: "Laboratório de Informática",
+      alt: "Laboratório de análises clínicas",
+      title: "Laboratório de Microscopia",
+    },
+    {
+      src: "/african-students-learning-portuguese-language.jpg",
+      alt: "Laboratório de análises clínicas",
+      title: "Laboratório de Microscopia",
+    },
+    {
+      src: "/african-students-studying-together-in-language-cen.jpg",
+      alt: "Laboratório de Fisoterapia",
+      title: "Fisoterapia Equipamento",
     },
     {
       src: "/african-students-working-with-electronics-and-circ.jpg",
-      alt: "Laboratório de Análises Clínicas",
-      title: "Análises Clínicas",
+      alt: "Laboratório de Fisoterapia",
+      title: "Fisoterapia",
     },
     {
       src: "/african-students-collaborating-on-technology-proje.jpg",
       alt: "Trabalho em Equipa",
-      title: "Colaboração entre Alunos",
+      title: "Laboratório de Microscopia",
     },
     {
       src: "/african-students-in-modern-computer-lab-with-monit.jpg",
+      alt: "Laboratório Moderno",
+      title: "Instalações Modernas",
+    },
+    {
+      src: "/african-students-in-computer-lab-learning-technolo.jpg",
       alt: "Laboratório Moderno",
       title: "Instalações Modernas",
     },
@@ -43,8 +63,8 @@ export function Carousel() {
     },
     {
       src: "/african-students-graduation-ceremony-celebrating-s.jpg",
-      alt: "Cerimónia de Formatura",
-      title: "Formatura dos Alunos",
+      alt: "Cerimónia de Entrada",
+      title: "Pátio escolar",
     },
   ]
 

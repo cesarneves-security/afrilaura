@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Heart, Activity, CheckCircle, Laptop, Users, Calculator, Radio } from "lucide-react"
+import { Heart, Activity, CheckCircle, Laptop, Users, Calculator, Radio, Pill, Stethoscope, Smile } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
 
 export function Courses() {
   const courses = [
@@ -8,6 +9,7 @@ export function Courses() {
       icon: Heart,
       title: "Enfermagem",
       duration: "3 Anos",
+      classLevel: "11ª à 13ª Classe",
       description:
         "Formação completa em cuidados de enfermagem, preparando profissionais qualificados para atuar em hospitais, clínicas e centros de saúde.",
       topics: [
@@ -23,6 +25,7 @@ export function Courses() {
       icon: Activity,
       title: "Análises Clínicas",
       duration: "3 Anos",
+      classLevel: "11ª à 13ª Classe",
       description: "Formação técnica em análises laboratoriais, microbiologia e diagnóstico clínico.",
       topics: [
         "Hematologia",
@@ -31,6 +34,51 @@ export function Courses() {
         "Parasitologia",
         "Imunologia",
         "Técnicas Laboratoriais",
+      ],
+    },
+    {
+      icon: Pill,
+      title: "Farmácia Radiológica",
+      duration: "3 Anos",
+      description:
+        "Formação em farmácia e técnicas radiológicas, preparando profissionais para atuar em farmácias e serviços de imagiologia.",
+      topics: [
+        "Farmacologia Aplicada",
+        "Gestão Farmacêutica",
+        "Radiologia Básica",
+        "Técnicas de Imagiologia",
+        "Proteção Radiológica",
+        "Anatomia Radiológica",
+      ],
+    },
+    {
+      icon: Stethoscope,
+      title: "Fisioterapia",
+      duration: "3 Anos",
+      description:
+        "Formação em técnicas de reabilitação física e tratamento de lesões, preparando profissionais para promover a saúde e bem-estar.",
+      topics: [
+        "Anatomia Funcional",
+        "Cinesiologia",
+        "Técnicas de Massagem",
+        "Reabilitação Física",
+        "Fisioterapia Desportiva",
+        "Terapias Manuais",
+      ],
+    },
+    {
+      icon: Smile,
+      title: "Estomatologia",
+      duration: "3 Anos",
+      description:
+        "Formação em saúde oral e técnicas odontológicas, preparando profissionais para atuar em clínicas dentárias e centros de saúde.",
+      topics: [
+        "Anatomia Oral",
+        "Higiene Oral",
+        "Técnicas de Assistência Dentária",
+        "Prevenção Oral",
+        "Radiologia Dentária",
+        "Materiais Dentários",
       ],
     },
     {
@@ -113,11 +161,19 @@ export function Courses() {
                   <div className="p-3 bg-gradient-to-br from-primary to-secondary rounded-xl shadow-lg">
                     <course.icon className="h-8 w-8 text-white" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <CardTitle className="text-xl">{course.title}</CardTitle>
                     <CardDescription className="text-base font-semibold text-secondary">
                       {course.duration}
                     </CardDescription>
+                    {course.classLevel && (
+                      <Badge
+                        variant="secondary"
+                        className="mt-2 bg-accent/20 text-accent-foreground border border-accent/30"
+                      >
+                        {course.classLevel}
+                      </Badge>
+                    )}
                   </div>
                 </div>
               </CardHeader>

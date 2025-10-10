@@ -32,7 +32,7 @@ export function Hero() {
               Instituto Politécnico Privado <span className="gradient-text">AFRILAURE</span>
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
-              Ensino Técnico Médio de Saúde. Formação de excelência em Enfermagem e Análises Clínicas.
+              Ensino Técnico Médio de Saúde, Formação de excelência em Enfermagem, Análises Clínicas, Farmácia Radiologia, Fisioterapia, e Estomatologia.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
